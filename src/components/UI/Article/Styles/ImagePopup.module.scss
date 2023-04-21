@@ -1,0 +1,32 @@
+.popup {
+    width: 120vw;
+    height: 120vh;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 5;
+    position: fixed;
+    top: -10vh;
+    left: -10vw;
+    @include FlexCenter();
+    overflow: visible;
+
+    &-x {
+        z-index: 6;
+        display: block;
+        position: fixed;
+        right: 10px;
+        top: 50px;
+        cursor: pointer;
+    }
+
+    &-img {
+        max-width: 85vw;
+        max-height: 85vh;
+        overflow: visible;
+    }
+
+    &-wrapper {
+        width: 100vw;
+        height: 100vh;
+        @include FlexCenter();
+    }
+}

@@ -1,0 +1,13 @@
+@import './reset';
+@import './root';
+
+@import '../components/NavBar/NavBar.module.scss';
+@import '../components/Index/Banner/Banner.module.scss';
+@import '../components/Index/Blocks/BlocksContainer.module.scss';
+@import '../components/Article/Article.module.scss';
+@import '../components/Login/LoginForm.module.scss';
+@import '../components/Index/Footer/FooterContainer.module.scss';
+@import '../components/Feedback/Feedback.module.scss';
+
+// UI
+@import '../components/UI/Article/Styles/ImagePopup.module.scss';

@@ -1,0 +1,12 @@
+.banner {
+    margin-top: 45px;
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 450px) {
+    .banner {
+        height: 20vh;
+    }
+}
