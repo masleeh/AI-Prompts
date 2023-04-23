@@ -75,5 +75,5 @@ export interface IIcons {
     ico74: JSX.Element,
     ico75: JSX.Element,
     ico76: JSX.Element,
-    
+    ico77: JSX.Element
 }
