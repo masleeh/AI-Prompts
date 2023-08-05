@@ -9,11 +9,13 @@ import { getCookies } from '@/helpers/useGetCookies'
 import { getUrl } from '@/helpers/useGetUrl'
 
 interface IBlockContainer {
-    t: any
+    t: any;
+    handleOpenLockModal: () => void;
+    handleCloseLockModal: () => void;
 }
 
 
-const BlocksContainer:React.FC<IBlockContainer> = ({t}) => {
+const BlocksContainer:React.FC<IBlockContainer> = ({t, handleCloseLockModal, handleOpenLockModal}) => {
     const {lan, userId, setUserId, setUsername} = useContext(GlobalContext)
     const [blocks, setBlocks] = useState<IBlocks[]>([])
     const router = useRouter()
@@ -22,9 +24,10 @@ const BlocksContainer:React.FC<IBlockContainer> = ({t}) => {
     
     const getBlocks = async () => {
         const user = await getCookies(router)
-        // console.log(lan)
         if (user && lan) {
-            const response = await axios.get(`${getUrl}/blocks/`, {
+            const response = await axios.post(`${getUrl}/blocks/`, {
+                userId: user.userId
+            } ,  {
                 headers: {
                     lan: lan
                 }
@@ -34,6 +37,8 @@ const BlocksContainer:React.FC<IBlockContainer> = ({t}) => {
             setBlocks(response.data)
         }
     }
+
+    // console.log(blocks)
 
     const goToArticle = (article:string) => {
         const validUrl = encodeURIComponent(article)
@@ -52,6 +57,9 @@ const BlocksContainer:React.FC<IBlockContainer> = ({t}) => {
                 userId={userId}
                 goToArticle={goToArticle}
                 index={index}
+                isAvailable={item.isAvailable}
+                handleOpenLockModal={handleOpenLockModal}
+                handleCloseLockModal={handleCloseLockModal}
             />
         )
     })

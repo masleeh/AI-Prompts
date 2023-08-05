@@ -1,0 +1,71 @@
+.locked-modal {
+    width: 120vw;
+    height: 120vh;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 5;
+    position: fixed;
+    top: -10vh;
+    left: -10vw;
+    @include FlexCenter();
+    overflow: hidden;
+
+    &-x {
+        z-index: 6;
+        display: block;
+        position: fixed;
+        right: 10px;
+        top: 50px;
+        cursor: pointer;
+    }
+
+    &-popup {
+        width: 450px;
+        height: 339px;
+        border-radius: 13px;
+        background: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-img {
+            width: 66px;
+            height: 66px;
+            margin-top: 40px;
+
+        }
+    
+        &-title {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        &-button {
+            background: linear-gradient(90deg, #E60000 0%, #001A75 100%);
+            border-radius: 15px;
+            width: 140px;
+            height: 35px;
+            margin-top: 25px;
+            @include FlexCenter();
+            color: #fff;
+        }
+
+        &-text {
+            display: block;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+    
+    &-link {
+        font-weight: 600;
+        color: #001A75;
+    }
+}

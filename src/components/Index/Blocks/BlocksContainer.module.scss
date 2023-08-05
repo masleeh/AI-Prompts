@@ -48,15 +48,22 @@
             cursor: pointer;
             padding: 0px 4px;
             margin-bottom: 6px;
-            
-            
 
+            
+            
+            
             &:last-child {
                 margin-bottom: 0;
             }
-
+            
             &:hover {
                 background-color: rgb(175, 175, 175);
+            }
+
+            &-locked {
+                &:hover {
+                    background: #FFF;
+                }
             }
 
             &-img-container {
@@ -75,6 +82,26 @@
                 max-width: 420px;
                 
             }
+        }
+
+        &-wrapper {
+            position: relative;
+
+            &-img {
+                z-index: 3;
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                top: 30%;
+                left: 30%;
+                cursor: pointer;
+            }
+        }
+
+        &-locked {
+            filter: blur(5px);
+            position: relative;
+
         }
     }
 }

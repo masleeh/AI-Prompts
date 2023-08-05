@@ -8,6 +8,9 @@ export interface IBlocks {
     userId: number,
     goToArticle: Function,
     index: number,
+    isAvailable: boolean;
+    handleOpenLockModal: () => void;
+    handleCloseLockModal: () => void;
 }
 
 export interface IArticle {
