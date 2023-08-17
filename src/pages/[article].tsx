@@ -24,24 +24,38 @@ const ArticlePage = () => {
         if (user) {
             setUserId(user.userId)
             setUsername(user.user)
-            try {
-                const token = localStorage.getItem('notion_token')
-                const response = await axios.post(`${getUrl}/articles`, {
-                    userId: userId,
-                    article: article,
-                    lan: lan
-                }, {
-                    headers: {
-                        authorization: `Bearer ${token}`
+
+            if (userId) {
+                try {
+                    const token = localStorage.getItem('notion_token')
+                    const response = await axios.post(`${getUrl}/articles`, {
+                        userId: userId,
+                        article: article,
+                        lan: lan
+                    }, {
+                        headers: {
+                            authorization: `Bearer ${token}`
+                        }
+                    })
+                    setArticleData(response.data.data)
+                    setIcon(response.data.icoId)
+                } catch (error:any) {
+                    if (error.response.data.isSessionFailed) {
+                        setErrorPopup(true)
                     }
-                })
-                setArticleData(response.data.data)
-                setIcon(response.data.icoId)
-            } catch (error:any) {
-                if (error.response.data.isSessionFailed) {
-                    setErrorPopup(true)
+                    else {
+                        console.log(error.response.data)
+                    }
                 }
-                else {
+            } else {
+                try {
+                    const response = await axios.post(`${getUrl}/free`, {
+                        article: article,
+                        lan: lan
+                    })
+                    setArticleData(response.data.data)
+                    setIcon(response.data.icoId)
+                } catch (error: any) {
                     console.log(error.response.data)
                 }
             }

@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="use-credentials" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        {/* <Script id="Yandex.Metrika counter" strategy="afterInteractive">
+        <Script id="Yandex.Metrika counter" strategy="afterInteractive">
           {`<!-- Yandex.Metrika counter -->
               <script type="text/javascript" >
                 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -26,7 +26,7 @@ export default function Document() {
               </script>
               <noscript><div><img src="https://mc.yandex.ru/watch/94477388" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
               <!-- /Yandex.Metrika counter -->`}
-        </Script> */}
+        </Script>
       </Head>
       <body>
         <Main />

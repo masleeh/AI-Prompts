@@ -23,8 +23,8 @@ const SingleBlock:React.FC<IBlocks> = (props) => {
             <div className="block-wrapper">
             <img src="/images/lock.svg" alt="" className="block-wrapper-img" onClick={() => props.handleOpenLockModal()}/>
 
+                <h2 className="block-title">{props.title}</h2>
                 <div className="block-locked">
-                    <h2 className="block-title">{props.title}</h2>
                     {props.articles.map((item) => { 
                         return (
                             <div className="block-article  block-article-locked" id={`${props.index}`} style={{scrollPaddingTop: 120}} key={item.id}>

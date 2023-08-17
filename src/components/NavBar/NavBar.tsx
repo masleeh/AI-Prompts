@@ -22,10 +22,10 @@ const NavBar:React.FC<INav> = ({lan, setLan, dropdown, setDropdown, switchLangua
           </Link>
           
           {(router.asPath == '/' || router.asPath.includes('/#')) && <BlocksDropdown 
-          blocks={blocks}
-          dropdown={dropdown}
-          setDropdown={setDropdown}
-          router={router}
+            blocks={blocks}
+            dropdown={dropdown}
+            setDropdown={setDropdown}
+            router={router}
           />}
 
           {router.asPath !== "/login" && <Link href='/feedback' className="navbar-main">

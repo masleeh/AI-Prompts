@@ -16,7 +16,7 @@ const LogOutDropdown:React.FC<ILogOut> = ({username, router, setUsername}) => {
 
     const terminateSession = async () => {
         try {
-            const response = await axios.get(`${getUrl}/auth/logout`)
+            await axios.get(`${getUrl}/auth/logout`)
             setUsername("")
             router.push('/login')
         } catch (error: any) {
